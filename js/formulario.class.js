@@ -14,7 +14,14 @@ class Formulario{
             });
             if ( finalElems.length > 0 ){ 
                 event.preventDefault();
+                finalElems.forEach( (el)=>{ el.style.borderColor ="red"; } )
+            }else if( !this.element[name="formTres"] ){
+                event.preventDefault();
+                pasarAProximoForm();
+            }else{
+                alert('ACA GUARDO LOS DATOS DE TODO EL FORMULARIO YA QUE TODO FUE VALIDADO')
             };
+
         });
     }
 

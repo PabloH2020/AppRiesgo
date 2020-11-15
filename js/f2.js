@@ -1,7 +1,3 @@
-const pasarADos = function(){
-    let uno = querySelector(`name=${formUno}`);
-    dos.style.display = "none";
-
-    let dos = querySelector(`name=${formDos}`);
-    dos.style.display = "flex";
+const pasarAProximoForm = function(){
+    window.scrollBy(0,900);
 }
