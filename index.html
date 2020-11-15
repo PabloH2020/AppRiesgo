@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="contPrincipal">
+            <div class="up1">
+                <img src="img/bank.svg" alt="imagen banco">
+                <h1>Análisis de Riesgo Crediticio</h1>
+            </div>
+
+            <div class="down1">
+                <ul>
+                    <li>
+                        <img src="img/sheet.svg" alt="nuevo documento">
+                        <a href="" id="new"><p>Nuevo Análisis</p></a>
+                    </li>
+                    <li>
+                        <img src="img/archives.svg" alt="listado de analisis">
+                        <a href="" id="otros"><p>Ver Análisis Anteriores</p></a>
+                    </li>
+                    <li>
+                        <img src="img/ayuda.svg" alt="ayuda">
+                        <a href="ayuda.html" id="help"><p>Help</p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <section id="datos1">
+        <div class="datosCliente">
+            <div class="enc"><h3>I - Cliente y Sector</h3></div>
+            <div class="data">
+                <form action="" method="post"  name="formUno" novalidate>
+                    <div><label for="name">*Nombre Cliente</label><input type="text" name="name" required></div><br>
+                    <div class="dos"><label for="actprinc">*Actividad Principal</label><input type="text" name="actprinc" class="dinp" required>
+                        <label for="partpr">*% de Participación en el Sector</label><input type="text" name="partpr" class="dinp" required></div><br>
+                    <div class="dos"><label for="actsec">Actividad Secundaria</label><input type="text" name="actsec" class="dinp">
+                        <label for="partsec">% de Participación en el Sector</label><input type="text" name="partsec" class="dinp"></div><br>
+                    <div><label for="personal">*Personal Empleado</label><input type="text" name="personal" required></div><br>
+                    <div class="dos"><label for="activos">*Activos [descripción - valor]</label><input type="text" name="activos" required></div><br><br>
+                    <div><h4>Análisis Sectorial</h4></div><br>
+                    <hr><br><br>
+                    <div><label for="dem">*Demanda y Precios</label><input type="text" name="dem" required></div><br>
+                    <div><label for="riesgos">Riesgos</label><input type="text" name="riesgos"></div>
+                    <input type="submit" value="Siguiente" name="sig">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="datos2">
+        <div class="contable datosCliente">
+            <form action="" method="post" name="formDos" novalidate>
+                <div class="arriba">
+                        <div class="enc"><h3>II - Información Contable y Financiera</h3></div>
+                    
+                        <table class="montos">
+                                <tr>
+                                    <th>FECHA</th>
+                                    <th>Período Actual - 2</th>
+                                    <th>Período Actual - 1</th>
+                                    <th>Período Actual</th>
+                                </tr>
+                                <tr>
+                                    <td>Ventas [$]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="vactual" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Mercado Local [$]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="mlactual" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Vtas en Mercado Local [%]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="ventasml" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Mercado Externo [$]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="mexterno" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Vtas en Mercado Externo [%]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="ventasme" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Ventas Promedio [$]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="vpromedio" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Resultado [$]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="res" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Rentabilidad s/ Ventas [%]</td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><input type="number" name="resVts" required></td>
+                                </tr>
+                            
+                        </table>
+
+                        <table class="ebitda">
+                            <tr>
+                                <td class="eb">EBITDA (Ganancias antes de impuestos) [$]</td>
+                                <td><input type="number"></td>
+                                <td><input type="number"></td>
+                                <td><input type="number" name="ganancias" required></td>
+                            </tr>
+                        </table>
+
+                        <table class="pasact">
+                            <tr>
+                                <td class="pa">Pasivo / Activo [%]</td>
+                                <td><input type="number"></td>
+                                <td><input type="number"></td>
+                                <td><input type="number" name="actpas" required></td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="abajo">
+                        <label for="comm">Comentarios sobre Situación Patrimonial, Ventas y Resultados</label><input type="text" name="comm" required>
+                </div>
+                <input type="submit" value="Siguiente" name="sig2">
+            </form>
+        </div>
+    
+    </section>
+
+    <section id="datos3">
+        <form action=""  name="formTres" novalidate>
+            <div class="propuesta datosCliente">
+                    <div class="enc"><h3>III - Propuesta Comercial y Deuda</h3></div>
+
+                    <div class="one">
+                            <div><label for="deuda">Deuda con Otras Entidades</label><input type="number" name="deuda"></div><br><br>
+                            <div><label for="prestamo">Préstamo a Otorgar</label><input type="number" name="prestamo" required></div><br><br>
+                            <hr><br><br>
+                            <div><label for="deudacp">Deuda Total c/ Préstamo</label><input type="number" name="deudacp" required></div><br><br>
+                    </div>
+
+                    <div class="two">
+                        <div><label for="vposteriores">Ventas Promedio Posteriores</label><input type="number" name="vposteriores" required></div>
+                        <div><label for="vultimo">Ventas Último Ejercicio</label><input type="number" name="vultimo" required></div>
+                    </div>
+
+                    <div class="three">
+                        <div><label for="dtvp">Deuda Total / Ventas Posteriores</label><input type="number" name="dtvp" required></div>
+                        <div><label for="dtvu">Deuda Total / Ventas Último Ej</label><input type="number" name="dtvu" required></div>
+                        <div><label for="povp">Préstamo a Otorgar / Ventas Posteriores</label><input type="number" name="povp" required></div>
+                        <div><label for="povu">Préstamo a Otorgar / Ventas Último Ej</label><input type="number" name="povu" required></div>
+                    </div>
+
+                    <div class="four">
+                        <div><label for="financ">% de Financiación sobre el Total de Deuda</label><input type="number" name="financ" required></div>
+                    </div>
+                    <input type="submit" value="Realizar Análisis" name="final">
+            </div>
+            
+        </form>
+    </section>
+
+<script src="js/moreFunc.js"></script>
+<script src="js/formulario.class.js"></script>
+<script src="js/input.class.js"></script>
+<script>
+    
+    const name = new Input('name');
+    const actprinc = new Input('actprinc');
+    const personal = new Input('personal');
+    const activos = new Input('activos');
+    const dem = new Input('dem');
+
+    const vactual = new Input('vactual');
+    const mlactual = new Input('mlactual');
+    const ventasml = new Input('ventasml');
+    const mexterno = new Input('mexterno');
+    const ventasme = new Input('ventasme');
+    const vpromedio = new Input('vpromedio');
+    const res = new Input('res');
+    const resVts = new Input('resVts');
+    const ganancias = new Input('ganancias');
+    const actpas = new Input('actpas');
+    const comm = new Input('comm');
+
+    const prestamo = new Input('prestamo');
+    const deudacp = new Input('deudacp');
+    const vposteriores = new Input('vposteriores');
+    const vultimo = new Input('vultimo');
+    const dtvp = new Input('dtvp');
+    const dtvu = new Input('dtvu');
+    const povp = new Input('povp');
+    const povu = new Input('povu');
+    const financ = new Input('financ');
+    
+    const formUno = new Formulario('formUno');
+    const formDos = new Formulario('formDos');
+    const formTres = new Formulario('formTres');
+
+    formUno.components = [name,actprinc,personal,activos,dem];
+    formDos.components = [vactual,mlactual,ventasml,mexterno,ventasme,vpromedio,res,resVts,ganancias,actpas,comm];
+    formTres.components = [prestamo,deudacp,vposteriores,vultimo,dtvp,dtvu,povp,povu,financ];
+
+    formUno.bindSubmit();
+    formDos.bindSubmit();
+    formTres.bindSubmit();
+
+
+    var nuevo = document.getElementById('new');
+    var otros = document.getElementById('otros');
+    var help = document.getElementById('help');
+    
+    
+    nuevo.addEventListener('click', ()=>{
+        let seccion1 = document.querySelector('#datos1');
+        let seccion2 = document.querySelector('#datos2');
+        let seccion3 = document.querySelector('#datos3');
+
+        seccion1.style.display = "block";
+    });
+
+        
+   
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+
+
+#secHelp{
+    display:flex;
+    justify-content:center;
+    margin-top:10vh;
+}
+
+#secHelp div{
+    background:slateblue;
+    border-radius:10px;
+    width:60vw;
+    height:60vh;
+    padding:5vw;
+    display:flex;
+    justify-content:center;
+    border:1px dashed black;
+}
+
+#secHelp p{
+    font-weight:bold;
+    font-size:14px;
+    border:1px solid black;
+    padding:10px;
+    background:#e3e3e3;
+    width:45vw;
+    height:40vh;
+}
+
+#mail{
+    display:flex;
+    justify-content:flex-end;
+}
+.enviarMail{
+    margin-top:-20vh;
+    width:150px;
+    height:150px;
+    border-top-left-radius:50%;
+    border-bottom-left-radius:50%;
+    border:3px solid grey;
+    background:#ffe24b;
+    text-align:center;
+}
+
+.enviarMail a{
+    color:black;
+    font-size:12px;
+    line-height:150px;
+    display:inline-block;
+    text-decoration:none;
+}

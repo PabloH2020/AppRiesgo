@@ -1,0 +1,280 @@
+*{margin:0; padding:0; box-sizing:border-box;}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,700&display=swap');
+
+body{ 
+    background:#e3e3e3;
+    font-family: 'Roboto', sans-serif;
+    font-size:14px;
+}
+
+.contPrincipal{
+    min-height: 100px;
+    width:100%;
+    background:slateblue;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border-bottom:2px dotted black;
+}
+.contPrincipal img{
+    width:38px;
+}
+
+.up1{
+    display:flex;
+    justify-content:flex-start;
+    width:100%;
+    padding-left:1%;
+    height:12vh;
+}
+.up1 h1{
+    margin-left:2vw;
+    font-size:1.6rem;
+    line-height:12vh;
+    color:#e3e3e3;
+}
+.up1 img{ color:#e3e3e3;}
+
+
+.down1{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+}
+.down1 ul{
+    display:flex;
+    justify-content:flex-end;
+    list-style:none;
+    width:40%;
+    margin-bottom:2vh;
+}
+.down1 li{
+    margin-right:2vw;
+    display:flex;
+    text-align:center;
+    align-items:center;
+    cursor:pointer;
+}
+.down1 a{
+    margin-left:.5vw;
+    text-decoration:none;
+    color:white;
+}
+
+
+
+/*Estilos formulario Cliente*/
+
+
+.datosCliente{
+    box-shadow:2px 2px 2px;
+    border:1px solid black;
+    margin-top:10vh;
+    margin-left:10vw;
+    padding-left:5%;
+    width:80vw;
+    height:100vh;
+    background:slategray;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+
+}
+
+input{border:1px solid black; border-radius:2px; }
+input:focus{ border:none; outline:0; padding-left:4px;}
+
+.datosCliente label{ font-weight: bold; margin-right:3%;}
+.datosCliente .dos{ display:flex;}
+.datosCliente input{ height:30px; margin-right:3%; width:70%;}
+.datosCliente input .dinp{ width:50%; height:40px; }
+.datosCliente h4{ font-size:16px; text-align:center; }
+.datosCliente hr{ background-color:black; width:110%; height:3px; margin-left:-5%; }
+
+
+.data input[name="name"]{ width: 50%; height:30px; margin-left:9%; }
+.data input[name="personal"]{ width: 30%; height:30px; margin-left:5%;} 
+.data input[name="activos"]{ width: 80%; height:40px; } 
+.data input[name="dem"]{ width: 75%; height:40px; } 
+.data input[name="riesgos"]{ width: 75%; height:40px; margin-left:8%; } 
+.data input[name="sig"]{ width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw; }
+.enc{
+    height:30px;
+    width:90%;
+    background:#393636;
+    color:#e3e1e1;
+    text-align:center;
+    line-height:30px;
+}
+
+.data{
+    width:90%;
+    height:90%;
+    
+}
+
+
+/*Estilos Formulario Datos Contables*/
+th{
+    border:2px solid black;
+}
+tr:first-child{
+    font-weight:bold;
+}
+td:nth-child(1){
+    font-weight:bold;
+    border:1px solid black;
+    padding-left:5px;
+}
+
+.montos{
+    margin-top:3vh;
+}
+.montos input{
+    width:100%;
+    border:none;
+}
+.montos td{
+    width:25%;
+}
+
+
+.ebitda{
+   
+    margin-top:3vh;
+}
+.ebitda td{
+    width:25%;
+}
+.ebitda input{
+    width:100%;
+}
+.ebitda .eb{
+    width:25%;
+}
+
+.pasact{
+    
+    margin-top:3vh;
+}
+.pasact td{
+    width:25%;
+}
+.passact input{
+    width:100%;
+}
+.passact .pa{
+    width:25%;
+}
+
+.abajo{display:flex; margin-top:5vh;}
+.abajo label{
+    display:block;
+    width:25%;
+    border:1px solid black;
+}
+.abajo input{
+    width:75%;
+    height:8vh;
+}
+
+.contable{
+    z-index:2;
+    position:relative;
+    /*top:-110vh;*/
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    padding-left:1%;
+    padding-right:1%;
+}
+.arriba{
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+}
+.arriba .enc{
+    align-self:center;
+}
+
+input[name="sig2"]{width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw;}
+
+/*Estilos Formulario Propuesta*/
+.propuesta{
+    z-index:3;
+    position:relative;
+    /*top:-110vh;*/
+    display:flex;
+}
+.one{
+    margin-top:5vh;
+    height:20%;
+}
+.one hr{
+    margin-left:2%;
+    width:90%;
+}
+input[name="deuda"]{
+    width:40%;
+}
+input[name="prestamo"]{
+    width:40%;
+    margin-left:6.5%;
+}
+input[name="deudacp"]{
+    width:40%;
+}
+
+.two{
+    display:flex;
+    justify-content:center;
+    margin-top:17vh;
+}
+.two div{
+    width:40%;
+    height:8vh;
+}
+
+.three{
+    width:100%;
+    height:30vh;
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:5vh;
+}
+.three div{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height:8vh;
+    min-width:50%;
+    
+}
+
+.four{
+    margin-bottom:1vh;
+    width:60%;
+    align-self:center;
+}
+input[name="final"]{
+    background-color:#54aa30;
+    width: 10%;
+    height:40px;
+    align-self:center;
+    position:relative;
+    top:-3vh;
+    left:30vw;
+}
+
+/*Estilos de secciones al comienzo de la App*/
+
+#datos1{
+    display:none;
+}
+#datos2{
+    display:none;
+}
+#datos3{
+    display:none;
+}
