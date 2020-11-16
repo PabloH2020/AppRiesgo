@@ -84,6 +84,7 @@ body{
 
 input{border:1px solid black; border-radius:2px; }
 input:focus{ border:none; outline:0; padding-left:4px;}
+input:focus[required]{ border:1px solid red; }
 
 .datosCliente label{ font-weight: bold; margin-right:3%;}
 .datosCliente .dos{ display:flex;}
@@ -95,7 +96,8 @@ input:focus{ border:none; outline:0; padding-left:4px;}
 
 .data input[name="name"]{ width: 50%; height:30px; margin-left:9%; }
 .data input[name="personal"]{ width: 30%; height:30px; margin-left:5%;} 
-.data input[name="activos"]{ width: 80%; height:40px; } 
+.data input[name="activos"]{ width: 10%; height:40px; } 
+.data input[name="activosText"]{ width: 80%; height:40px; } 
 .data input[name="dem"]{ width: 75%; height:40px; } 
 .data input[name="riesgos"]{ width: 75%; height:40px; margin-left:8%; } 
 .data input[name="sig"]{ width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw; }

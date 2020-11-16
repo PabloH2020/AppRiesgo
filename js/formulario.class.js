@@ -14,7 +14,7 @@ class Formulario{
             });
             if ( finalElems.length > 0 ){ 
                 event.preventDefault();
-                finalElems.forEach( (el)=>{ el.style.borderColor ="red"; } )
+                
             }else if( !this.element[name="formTres"] ){
                 event.preventDefault();
                 pasarAProximoForm();

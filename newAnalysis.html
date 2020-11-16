@@ -37,14 +37,14 @@
         <div class="datosCliente">
             <div class="enc"><h3>I - Cliente y Sector</h3></div>
             <div class="data">
-                <form action="" method=""  name="formUno" novalidate>
+                <form action="logic/guardar1.php" method="POST"  name="formUno" novalidate>
                     <div><label for="name">*Nombre Cliente</label><input type="text" name="name" required></div><br>
                     <div class="dos"><label for="actprinc">*Actividad Principal</label><input type="text" name="actprinc" class="dinp" required>
                         <label for="partpr">*% de Participación en el Sector</label><input type="text" name="partpr" class="dinp" required></div><br>
                     <div class="dos"><label for="actsec">Actividad Secundaria</label><input type="text" name="actsec" class="dinp">
                         <label for="partsec">% de Participación en el Sector</label><input type="text" name="partsec" class="dinp"></div><br>
                     <div><label for="personal">*Personal Empleado</label><input type="text" name="personal" required></div><br>
-                    <div class="dos"><label for="activos">*Activos [descripción - valor]</label><input type="text" name="activos" required></div><br><br>
+                    <div class="dos"><label for="activos">*Activos [valor - descripcion]</label><input type="number" name="activos" required><input type="text" name="activosText"></div><br><br>
                     <div><h4>Análisis Sectorial</h4></div><br>
                     <hr><br><br>
                     <div><label for="dem">*Demanda y Precios</label><input type="text" name="dem" required></div><br>
@@ -225,21 +225,8 @@
     formDos.bindSubmit();
     formTres.bindSubmit(); 
 
-
-
-
-
-    
-
-
-    
-
-    
-    
-    
-        
-   
     
 </script>
 
 </body>
+</html>
