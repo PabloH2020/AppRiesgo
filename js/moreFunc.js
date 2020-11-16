@@ -5,6 +5,9 @@ var inputsArray = Array.from(document.querySelectorAll(`input[required]`));
             if( ev.target.value.trim() != "" ){
                 ev.target.style.borderColor = "lightgreen";
                 ev.target.style.borderWidth = "medium";
+            }else{
+                ev.target.style.borderColor = "red";
+                ev.target.style.borderWidth = "medium";
             }
         })
     });

@@ -15,11 +15,11 @@ class Formulario{
             if ( finalElems.length > 0 ){ 
                 event.preventDefault();
                 
-            }else if( !this.element[name="formTres"] ){
+            }else if( !this.element[name="formTres"]  ){
                 event.preventDefault();
-                pasarAProximoForm();
+                window.scrollBy(0,900);
             }else{
-                alert('ACA GUARDO LOS DATOS DE TODO EL FORMULARIO YA QUE TODO FUE VALIDADO')
+                alert('Sus datos han sido enviados');
             };
 
         });
