@@ -100,7 +100,7 @@ input:focus[required]{ border:1px solid red; }
 .data input[name="activosText"]{ width: 80%; height:40px; } 
 .data input[name="dem"]{ width: 75%; height:40px; } 
 .data input[name="riesgos"]{ width: 75%; height:40px; margin-left:8%; } 
-.data input[name="sig"]{ width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw; }
+.data button[name="sig"]{ width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw; }
 .enc{
     height:30px;
     width:90%;
@@ -200,7 +200,7 @@ td:nth-child(1){
     align-self:center;
 }
 
-input[name="sig2"]{width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw;}
+button[name="sig2"]{width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw;}
 
 /*Estilos Formulario Propuesta*/
 .propuesta{

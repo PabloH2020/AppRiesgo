@@ -12,9 +12,8 @@ class Formulario{
                 component.validate()
                 return !component.isValid;
             });
-            while ( finalElems.length > 0 || this.element[name] !="formTres" ){ 
-                event.preventDefault();
-                
+            if ( finalElems.length > 0 ){ 
+                event.preventDefault(); 
             };
 
         });
