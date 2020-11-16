@@ -185,8 +185,7 @@
 <script src="js/formulario.class.js"></script>
 <script src="js/input.class.js"></script>
 <script>
-  
-
+    
     const name = new Input('name');
     const actprinc = new Input('actprinc');
     const personal = new Input('personal');
@@ -216,16 +215,55 @@
     const financ = new Input('financ');
     
     const formUno = new Formulario('formUno');
-    const formDos = new Formulario('formDos');
-    const formTres = new Formulario('formTres');
-
+    
     formUno.components = [name,actprinc,personal,activos,dem,vactual,mlactual,ventasml,mexterno,ventasme,vpromedio,res,resVts,ganancias,actpas,comm,prestamo,deudacp,vposteriores,vultimo,dtvp,dtvu,povp,povu,financ];
 
     formUno.bindSubmit();
     
-    const sig = querySelector('button[name="sig"]');
-    sig.addEventListener('click', e=>{
-        alert('HOLA');
+    const sig = document.querySelector('button[name="sig"]');
+    sig.addEventListener('click', ()=>{
+        let inputs = Array.from(document.querySelectorAll('.data input[required]'));
+        
+        const arregloFinal = inputs.filter( (inp)=>{
+
+            if ( inp.required && inp.value === "" ){
+                return inp;
+            };
+            
+        })
+        
+            if ( arregloFinal.length > 0  ){
+
+                arregloFinal.forEach( (element)=>{
+                    element.style.borderColor = "red";
+                    element.style.borderWidth = "medium";
+            })
+            }else{
+                window.scrollBy(0,300);
+            };
+    });
+
+    const sig2 = document.querySelector('button[name="sig2"]');
+    sig2.addEventListener('click', ()=>{
+        let inputs = Array.from(document.querySelectorAll('.contable input[required]'));
+        
+        const arregloFinal = inputs.filter( (inp)=>{
+
+            if ( inp.required && inp.value === "" ){
+                return inp;
+            };
+            
+        })
+        
+            if ( arregloFinal.length > 0  ){
+
+                arregloFinal.forEach( (element)=>{
+                    element.style.borderColor = "red";
+                    element.style.borderWidth = "medium";
+            })
+            }else{
+                window.scrollBy(0,300);
+            };
     })
     
 </script>
