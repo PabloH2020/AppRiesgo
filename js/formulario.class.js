@@ -12,14 +12,9 @@ class Formulario{
                 component.validate()
                 return !component.isValid;
             });
-            if ( finalElems.length > 0 ){ 
+            while ( finalElems.length > 0 || this.element[name] !="formTres" ){ 
                 event.preventDefault();
                 
-            }else if( !this.element[name="formTres"]  ){
-                event.preventDefault();
-                window.scrollBy(0,900);
-            }else{
-                alert('Sus datos han sido enviados');
             };
 
         });
