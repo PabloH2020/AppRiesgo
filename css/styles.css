@@ -265,8 +265,7 @@ input[name="final"]{
     height:40px;
     align-self:center;
     position:relative;
-    top:-3vh;
-    left:30vw;
+    left:200px;
 }
 
 /*Estilos de secciones al comienzo de la App*/
