@@ -9,6 +9,7 @@ mlactual.element.addEventListener('blur',e=>{
     ventasml.element.value =  Math.round( parseFloat(e.target.value) / parseFloat(vactual.element.value) *100);
     mexterno.element.value = Math.round( parseInt(vactual.element.value) - parseInt(e.target.value) );
     ventasme.element.value =  Math.round( parseFloat(mexterno.element.value) / parseFloat(vactual.element.value) *100);
+    vultimo.element.value = vactual.element.value;
 })
 
 res.element.addEventListener('blur', e=>{
@@ -75,13 +76,12 @@ prestamo.element.addEventListener('blur' , e=>{
 vposteriores.element.addEventListener('blur' , e=>{
     dtvp.element.value =  Math.round(parseFloat(deudacp.element.value) / parseFloat(e.target.value) * 100);
     povp.element.value =  Math.round(parseFloat(prestamo.element.value) / parseFloat(e.target.value) * 100);
-})
-
-vultimo.element.addEventListener('blur' , e=>{
     dtvu.element.value =  Math.round( parseFloat(deudacp.element.value) / parseFloat(e.target.value) * 100);
     povu.element.value =  Math.round( parseFloat(prestamo.element.value) / parseFloat(e.target.value) * 100);
     financ.element.value =  Math.round( parseFloat(prestamo.element.value) / parseFloat(deudacp.element.value) * 100);
 })
+
+
 
 
 

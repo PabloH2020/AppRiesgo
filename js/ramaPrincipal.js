@@ -1,4 +1,4 @@
-const name = new Input('name');
+    const name = new Input('name');
     const actprinc = new Input('actprinc');
     const personal = new Input('personal');
     const activos = new Input('activos');

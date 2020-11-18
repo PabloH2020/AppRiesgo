@@ -200,7 +200,7 @@ td:nth-child(1){
     align-self:center;
 }
 
-button[name="sig2"]{width: 10%; height:40px; align-self:center; position:relative; top:3vh; left:65vw;}
+button[name="sig2"]{width: 10%; height:40px; align-self:center; position:relative; top:7vh; left:65vw;}
 
 /*Estilos Formulario Propuesta*/
 .propuesta{
@@ -265,7 +265,9 @@ input[name="final"]{
     height:40px;
     align-self:center;
     position:relative;
-    left:200px;
+    left:76%;
+    top:-10vh;
+    z-index:1000;
 }
 
 /*Estilos de secciones al comienzo de la App*/

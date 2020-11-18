@@ -1,4 +1,5 @@
 <?php
+
 include("conexion.php");
 
 if( isset($_POST['final']) ){
@@ -57,12 +58,23 @@ if( isset($_POST['final']) ){
     $financ = trim($_POST['financ']);
     $fechaRegistro = date("d/m/y");
 
-    $insertar = "INSERT INTO empresas(id, nombre, actPrincipal, participacionActPrincipal, actSecundaria, participacionActSecundaria, personalEmpleado, activos, activosDescripcion, demanda, riesgos, ventas2, ventas1, ventasActual,mercadoLocal2, mercadoLocal1, mercadoLocalActual, PorcentajeVtasMercadoLocal2,PorcentajeVtasMercadoLocal1, PorcentajeVtasMercadoLocalActual, mercadoExterno2, mercadoExterno1, mExternoActual, PorcentajeVtasMExterno2, PorcentajeVtasMExterno1, PorcentajeVtasMExternoActual, VtasPromedio2, VtasPromedio1,VtasPromedioActual, resultado2, resultado1, resultadoActual, rentabilidadSobreVtas2, rentabilidadSobreVtas1, rentabilidadSobreVtasActual, ganancias2, ganancias1, gananciasActual, pasivoSobreActivo2, pasivoSobreActivo1, pasivoSobreActivoActual, situacionPatrimonial, deudaConOtrasEntidades, prestamo, deudaConPrestamo, VtasPromedioPosteriores, VtasPromedioUltimo, deudaSobreVentasPosteriores, deudaSobreVtasUltimo, prestamoSobreVentasPosteriores, prestamoSobreVentasUltimo, PorcentajeFinanciacionSobreTotalDeDeuda, fechaRegistro) VALUES ('$name','$actprinc','$partpr','$actsec','$partsec','$personal','$activos','$activosText','$dem','$riesgos','$v2','$v1','$vactual','$ml2','$ml1','$mlactual','$vml2','$vml1','$ventasml','$mex2','$mex1','$mexterno','$vme2','$vme1','$ventasme','$vprom2','$vprom1','$vpromedio','$res2','$res1','$res','$resVts2','$resVts1','$resVts','$gan2','$gan1','$ganancias','$actpas2','$actpas1','$actpas','$comm','$deuda','$prestamo','$deudacp','$vposteriores','$vultimo','$dtvp','$dtvu','$povp','$povu','$financ','$fechaRegistro')";
+    $insertar = "INSERT INTO empresas(nombre, actPrincipal, participacionActPrincipal, actSecundaria, participacionActSecundaria, personalEmpleado, activos, activosDescripcion, demanda, riesgos, ventas2, ventas1, ventasActual,mercadoLocal2, mercadoLocal1, mercadoLocalActual, PorcentajeVtasMercadoLocal2,PorcentajeVtasMercadoLocal1, PorcentajeVtasMercadoLocalActual, mercadoExterno2, mercadoExterno1, mExternoActual, PorcentajeVtasMExterno2, PorcentajeVtasMExterno1, PorcentajeVtasMExternoActual, VtasPromedio2, VtasPromedio1,VtasPromedioActual, resultado2, resultado1, resultadoActual, rentabilidadSobreVtas2, rentabilidadSobreVtas1, rentabilidadSobreVtasActual, ganancias2, ganancias1, gananciasActual, pasivoSobreActivo2, pasivoSobreActivo1, pasivoSobreActivoActual, situacionPatrimonial, deudaConOtrasEntidades, prestamo, deudaConPrestamo, VtasPromedioPosteriores, VtasPromedioUltimo, deudaSobreVentasPosteriores, deudaSobreVtasUltimo, prestamoSobreVentasPosteriores, prestamoSobreVentasUltimo, PorcentajeFinanciacionSobreTotalDeDeuda, fechaRegistro) VALUES ('$name','$actprinc','$partpr','$actsec','$partsec','$personal','$activos','$activosText','$dem','$riesgos','$v2','$v1','$vactual','$ml2','$ml1','$mlactual','$vml2','$vml1','$ventasml','$mex2','$mex1','$mexterno','$vme2','$vme1','$ventasme','$vprom2','$vprom1','$vpromedio','$res2','$res1','$res','$resVts2','$resVts1','$resVts','$gan2','$gan1','$ganancias','$actpas2','$actpas1','$actpas','$comm','$deuda','$prestamo','$deudacp','$vposteriores','$vultimo','$dtvp','$dtvu','$povp','$povu','$financ','$fechaRegistro')";
 
     $query = mysqli_query($conectar, $insertar);
     
-    if($query){
-        echo "correcto";
+    if($query){   
+        header("Location: ../index.html");
+        // caso verde - asegurable
+        echo "El ingreso ha sido correcto";
+        if ( ( $activos + $res ) > ( $deudacp )  &&    ( $partpr + $partsec ) > 30   &&   ( $deudacp / $vposteriores ) < 0.5    &&   ( $deudacp / $vultimo ) < 0.5   ){
+            echo '<script type="text/javascript">green();</script>';
+        }else if ( ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vposteriores ) < 0.5  ) || ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vultimo ) < 0.5  )){
+            echo '<script type="text/javascript">yellow();</script>';
+        }else if( ( $activos + $res ) <= ( $deudacp ) ){
+            echo '<script type="text/javascript">red();</script>';
+        };
+        
+
     }else{
         echo "incorrecto";
     }
