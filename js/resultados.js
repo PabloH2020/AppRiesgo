@@ -5,20 +5,14 @@ inputs.forEach( (input)=>{
 
 });
 
-mlactual.element.addEventListener('mouseout',e=>{
-    ventasml.element.value = Math.round( parseFloat(e.target.value) / parseFloat(vactual.element.value) *100);
+mlactual.element.addEventListener('blur',e=>{
+    ventasml.element.value =  Math.round( parseFloat(e.target.value) / parseFloat(vactual.element.value) *100);
+    mexterno.element.value = Math.round( parseInt(vactual.element.value) - parseInt(e.target.value) );
+    ventasme.element.value =  Math.round( parseFloat(mexterno.element.value) / parseFloat(vactual.element.value) *100);
 })
 
-mexterno.element.addEventListener('mouseout' , e=>{
-    ventasme.element.value = Math.round( parseFloat(e.target.value) / parseFloat(vactual.element.value) *100);
-})
-
-ventasml.element.addEventListener('mouseout' , e=>{
-    mexterno.element.value = parseInt(vactual.element.value) - parseInt(mlactual.element.value);
-})
-
-res.element.addEventListener('mouseout', e=>{
-    resVts.element.value = Math.round( parseFloat(e.target.value) / parseFloat(vactual.element.value) *100);
+res.element.addEventListener('blur', e=>{
+    resVts.element.value =  Math.round( parseFloat(e.target.value) / parseFloat(vactual.element.value) *100);
 });
 
 //Datos de períodos -2 y -1
@@ -47,36 +41,24 @@ let actpas1 = document.querySelector('input[name="actpas1"]');
 
 
 
-ml2.addEventListener('mouseout',e=>{
-    vml2.value  = Math.round( parseFloat(e.target.value) / parseFloat(v2.value) * 100);
+ml2.addEventListener('blur',e=>{
+    vml2.value  =  Math.round(parseFloat(e.target.value) / parseFloat(v2.value) * 100);
+    mex2.value = Math.round(parseInt(v2.value) - parseInt(ml2.value));
+    vme2.value = Math.round(parseFloat(mex2.value) / parseFloat(v2.value) * 100);
 })
 
-ml1.addEventListener('mouseout',e=>{
-    vml1.value  = Math.round( parseFloat(e.target.value) / parseFloat(v1.value) * 100);
+ml1.addEventListener('blur',e=>{
+    vml1.value  =  Math.round(parseFloat(e.target.value) / parseFloat(v1.value) * 100);
+    mex1.value = Math.round(parseInt(v1.value) - parseInt(ml1.value));
+    vme1.value =  Math.round(parseFloat(mex1.value) / parseFloat(v1.value) * 100);
 })
 
-vml2.addEventListener('mouseout' , e=>{
-    mex2.value = parseInt(v2.value) - parseInt(ml2.value);
-})
-
-vml1.addEventListener('mouseout' , e=>{
-    mex1.value = parseInt(v1.value) - parseInt(ml1.value);
-})
-
-mex2.addEventListener('mouseout' , e=>{
-    vme2.value = Math.round( parseFloat(e.target.value) / parseFloat(v2.value) * 100);
-})
-
-mex1.addEventListener('mouseout' , e=>{
-    vme1.value = Math.round( parseFloat(e.target.value) / parseFloat(v1.value) * 100);
-})
-
-res2.addEventListener('mouseout', e=>{
-    resVts2.value = Math.round( parseFloat(e.target.value) / parseFloat(v2.value) * 100);
+res2.addEventListener('blur', e=>{
+    resVts2.value =  Math.round(parseFloat(e.target.value) / parseFloat(v2.value) * 100);
 });
 
-res1.addEventListener('mouseout', e=>{
-    resVts1.value = Math.round( parseFloat(e.target.value) / parseFloat(v1.value) * 100);
+res1.addEventListener('blur', e=>{
+    resVts1.value =  Math.round(parseFloat(e.target.value) / parseFloat(v1.value) * 100);
 });
 
 
@@ -86,19 +68,19 @@ res1.addEventListener('mouseout', e=>{
 //Aca termina el segundo formulario
 let deuda = document.querySelector('input[name="deuda"]');
 
-prestamo.element.addEventListener('mouseout' , e=>{
-    deudacp.element.value = parseInt(e.target.value) + parseInt(deuda.value);
+prestamo.element.addEventListener('blur' , e=>{
+    deudacp.element.value = Math.round(parseInt(e.target.value) + parseInt(deuda.value));
 })
 
-vposteriores.element.addEventListener('mouseout' , e=>{
-    dtvp.element.value = Math.round( parseFloat(deudacp.element.value) / parseFloat(e.target.value) * 100);
-    povp.element.value = Math.round( parseFloat(prestamo.element.value) / parseFloat(e.target.value) * 100);
+vposteriores.element.addEventListener('blur' , e=>{
+    dtvp.element.value =  Math.round(parseFloat(deudacp.element.value) / parseFloat(e.target.value) * 100);
+    povp.element.value =  Math.round(parseFloat(prestamo.element.value) / parseFloat(e.target.value) * 100);
 })
 
-vultimo.element.addEventListener('mouseout' , e=>{
-    dtvu.element.value = Math.round( parseFloat(deudacp.element.value) / parseFloat(e.target.value) * 100);
-    povu.element.value = Math.round( parseFloat(prestamo.element.value) / parseFloat(e.target.value) * 100);
-    financ.element.value = Math.round( parseFloat(prestamo.element.value) / parseFloat(deudacp.element.value) * 100);
+vultimo.element.addEventListener('blur' , e=>{
+    dtvu.element.value =  Math.round( parseFloat(deudacp.element.value) / parseFloat(e.target.value) * 100);
+    povu.element.value =  Math.round( parseFloat(prestamo.element.value) / parseFloat(e.target.value) * 100);
+    financ.element.value =  Math.round( parseFloat(prestamo.element.value) / parseFloat(deudacp.element.value) * 100);
 })
 
 
