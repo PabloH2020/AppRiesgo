@@ -1,0 +1,29 @@
+
+section{display:flex; justify-content:space-evenly;}
+
+section div{
+    padding:3vh;
+    width:60vw;
+    height:40vh;
+    background:#56267e;
+    text-align:center;
+    margin-top:10vh;
+}
+
+section p{
+    font-weight:medium;
+}
+
+.gr{
+    width:130px;
+}
+
+.ye{
+    margin-top:15vh;
+    height:150px;
+    width:150px;
+}
+
+.red{
+    width:130px;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesResultados.css">
 </head>
 <body>
     <header>
@@ -18,26 +19,26 @@
                 <ul>
                     <li>
                         <img src="img/sheet.svg" alt="nuevo documento">
-                        <a href="appRiesgoCrediticio/newAnalysis.html" id="new"><p>Nuevo Análisis</p></a>
+                        <a href="newAnalysis.html" id="new"><p>Nuevo Análisis</p></a>
                     </li>
                     <li>
                         <img src="img/archives.svg" alt="listado de analisis">
-                        <a href="appRiesgoCrediticio/analisisAnteriores.html" id="otros"><p>Ver Análisis Anteriores</p></a>
+                        <a href="" id="otros"><p>Ver Análisis Anteriores</p></a>
                     </li>
                     <li>
                         <img src="img/ayuda.svg" alt="ayuda">
-                        <a href="appRiesgoCrediticio/help.html" id="help"><p>Help</p></a>
+                        <a href="help.html" id="help"><p>Help</p></a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-    <section></section>
+    <section>
+        <img src="img/green.svg" class="gr" alt="">
+        <div><p>*Los activos y el resultado del último ejercicio superan a la deuda con el préstamo considerado.<br><br><br>* Tiene un gran porcentaje de participación en los sectores en los que participa, mayor al 30% en la suma.<br><br><br>* La tasa que se compone de Deuda Total / Ventas Proyectadas Posteriores  , es menor al 50%.<br><br><br>* La tasa que se compone de Deuda Total / Ventas en el Último ejercicio  , es menor al 50%.<br><br><br><b>RESULTADO : <u>ASEGURABLE</u> !!!</b></p></div></section>
     <script>
-        
         window.addEventListener('load',()=>{
-            history.pushState("","inicio","/Bienvenidos");
-            
+            history.pushState("http://localhost/appRiesgoCrediticio","verde","/resultadoAnalisis");
         })
     </script>
 </body>

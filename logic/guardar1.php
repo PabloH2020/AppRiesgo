@@ -77,28 +77,32 @@ if( isset($_POST['final']) ){
             $body = $texto;
             $color = 'Verde';
             $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
+
+            header("Location: ../verde.html");
             
-            //echo "onload='green()'";
-            //echo '<script src ="../js/verde.js" type="text/javascript">green();</script>';
+            
         }else if ( ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vposteriores ) < 0.5  ) || ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vultimo ) < 0.5  )){
            $texto = "* Los activos y el resultado del último ejercicio superan a la deuda con el prestamo considerado.<br><br><br>* * Una de las tasas que analiza Deuda Total / Ventas Proyectadas es menor al 50%.<br><br><br><b>RESULTADO : ASEGURABLE INICIALMENTE !!!  DEBE ESTIMARSE CON PRECISIÓN EL NIVEL DE VENTAS Y LOS COSTOS OPERATIVOS </b>.";
            $body = $texto;
            $color = 'Amarillo';
            $insercion = "INSERT INTO resultadosanalisis(nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
-            //echo "onload='yellow()'";
-            //echo '<script src ="../js/amarillo.js" type="text/javascript">yellow();</script>';
+
+           header("Location: ../amarillo.html");
+
+           
         }else if( ( $activos + $res ) <= ( $deudacp ) ){
             $texto = "* Los activos y el resultado del último ejercicio fallan en superar a la sumatoria de las deudas.<br><br><br>* Debe analizarse el proyecto de inversión cuidadosamente, y realizar un análisis de mercado para preveer aumentos en ventas que puedan cubrir el costo financiero.<br><br><br><b>RESULTADO : NO ASEGURABLE !!!  DEBEN CONTROLARSE ASIMISMO LOS COSTOS OPERATIVOS Y EL MARGEN DE GANANCIA </b>."; 
            $body = $texto;
            $color = 'Rojo';
            $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
-            //echo "onload='red()'";
-            //echo '<script src ="../js/rojo.js" type="text/javascript">red();</script>';
+
+           header("Location: ../rojo.html");
+
         };
         
         $query = mysqli_query($conectar, $insercion);
 
-        header("Location: ../index.html");
+        //header("Location: ../index.html");
     }else{
         echo "incorrecto";
     }

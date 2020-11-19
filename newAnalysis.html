@@ -18,15 +18,15 @@
                 <ul>
                     <li>
                         <img src="img/sheet.svg" alt="nuevo documento">
-                        <a href="newAnalysis.html" type="button" id="new"><p>Nuevo Análisis</p></a>
+                        <a href="appRiesgoCrediticio/newAnalysis.html" type="button" id="new"><p>Nuevo Análisis</p></a>
                     </li>
                     <li>
                         <img src="img/archives.svg" alt="listado de analisis">
-                        <a href="" id="otros"><p>Ver Análisis Anteriores</p></a>
+                        <a href="appRiesgoCrediticio/analisisAnteriores.html" id="otros"><p>Ver Análisis Anteriores</p></a>
                     </li>
                     <li>
                         <img src="img/ayuda.svg" alt="ayuda">
-                        <a href="help.html" id="help"><p>Help</p></a>
+                        <a href="appRiesgoCrediticio/help.html" id="help"><p>Help</p></a>
                     </li>
                 </ul>
             </div>
@@ -193,7 +193,12 @@
 <script src="js/verde.js"></script>
 <script src="js/amarillo.js"></script>
 <script src="js/rojo.js"></script>
-
+<script>
+    
+    window.addEventListener('load',()=>{
+        history.replaceState("","nuevo","/NuevoAnalisis");
+    })
+</script>
 
 
 </body>

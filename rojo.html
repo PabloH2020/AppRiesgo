@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesResultados.css">
 </head>
 <body>
     <header>
@@ -18,26 +19,26 @@
                 <ul>
                     <li>
                         <img src="img/sheet.svg" alt="nuevo documento">
-                        <a href="appRiesgoCrediticio/newAnalysis.html" id="new"><p>Nuevo Análisis</p></a>
+                        <a href="newAnalysis.html" id="new"><p>Nuevo Análisis</p></a>
                     </li>
                     <li>
                         <img src="img/archives.svg" alt="listado de analisis">
-                        <a href="appRiesgoCrediticio/analisisAnteriores.html" id="otros"><p>Ver Análisis Anteriores</p></a>
+                        <a href="" id="otros"><p>Ver Análisis Anteriores</p></a>
                     </li>
                     <li>
                         <img src="img/ayuda.svg" alt="ayuda">
-                        <a href="appRiesgoCrediticio/help.html" id="help"><p>Help</p></a>
+                        <a href="help.html" id="help"><p>Help</p></a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-    <section></section>
+    <section>
+        <img src="img/red.svg" class="red" alt="">
+        <div><p>* Los activos y el resultado del último ejercicio fallan en superar a la sumatoria de las deudas.<br><br><br>* Debe analizarse el proyecto de inversión cuidadosamente, y realizar un análisis de mercado para preveer aumentos en ventas que puedan cubrir el costo financiero.<br><br><br><b>RESULTADO : <u>NO ASEGURABLE</u> !!!  DEBEN CONTROLARSE ASIMISMO LOS COSTOS OPERATIVOS Y EL MARGEN DE GANANCIA </b>.</p></div></section>
     <script>
-        
         window.addEventListener('load',()=>{
-            history.pushState("","inicio","/Bienvenidos");
-            
+            history.pushState("http://localhost/appRiesgoCrediticio","rojo","/resultadoAnalisis");
         })
     </script>
 </body>
