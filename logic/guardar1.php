@@ -1,3 +1,7 @@
+<script type="text/javascript" src="../js/verde.js"></script>
+<script type="text/javascript" src="../js/amarillo.js"></script>
+<script type="text/javascript" src="../js/rojo.js"></script>
+
 <?php
 
 include("conexion.php");
@@ -62,19 +66,39 @@ if( isset($_POST['final']) ){
 
     $query = mysqli_query($conectar, $insertar);
     
+    
+    
     if($query){   
-        header("Location: ../index.html");
-        // caso verde - asegurable
+        
+        
         echo "El ingreso ha sido correcto";
         if ( ( $activos + $res ) > ( $deudacp )  &&    ( $partpr + $partsec ) > 30   &&   ( $deudacp / $vposteriores ) < 0.5    &&   ( $deudacp / $vultimo ) < 0.5   ){
-            echo '<script type="text/javascript">green();</script>';
+            $texto = "*Los activos y el resultado del último ejercicio superan a la deuda con el préstamo considerado.<br><br><br>* Tiene un gran porcentaje de participación en los sectores en los que participa, mayor al 30% en la suma.<br><br><br>* La tasa que se compone de Deuda Total / Ventas Proyectadas Posteriores  , es menor al 50%.<br><br><br>* La tasa que se compone de Deuda Total / Ventas en el Último ejercicio  , es menor al 50%.<br><br><br><b>RESULTADO : ASEGURABLE !!!</b>";
+            $body = $texto;
+            $color = 'Verde';
+            $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
+            
+            //echo "onload='green()'";
+            //echo '<script src ="../js/verde.js" type="text/javascript">green();</script>';
         }else if ( ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vposteriores ) < 0.5  ) || ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vultimo ) < 0.5  )){
-            echo '<script type="text/javascript">yellow();</script>';
+           $texto = "* Los activos y el resultado del último ejercicio superan a la deuda con el prestamo considerado.<br><br><br>* * Una de las tasas que analiza Deuda Total / Ventas Proyectadas es menor al 50%.<br><br><br><b>RESULTADO : ASEGURABLE INICIALMENTE !!!  DEBE ESTIMARSE CON PRECISIÓN EL NIVEL DE VENTAS Y LOS COSTOS OPERATIVOS </b>.";
+           $body = $texto;
+           $color = 'Amarillo';
+           $insercion = "INSERT INTO resultadosanalisis(nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
+            //echo "onload='yellow()'";
+            //echo '<script src ="../js/amarillo.js" type="text/javascript">yellow();</script>';
         }else if( ( $activos + $res ) <= ( $deudacp ) ){
-            echo '<script type="text/javascript">red();</script>';
+            $texto = "* Los activos y el resultado del último ejercicio fallan en superar a la sumatoria de las deudas.<br><br><br>* Debe analizarse el proyecto de inversión cuidadosamente, y realizar un análisis de mercado para preveer aumentos en ventas que puedan cubrir el costo financiero.<br><br><br><b>RESULTADO : NO ASEGURABLE !!!  DEBEN CONTROLARSE ASIMISMO LOS COSTOS OPERATIVOS Y EL MARGEN DE GANANCIA </b>."; 
+           $body = $texto;
+           $color = 'Rojo';
+           $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
+            //echo "onload='red()'";
+            //echo '<script src ="../js/rojo.js" type="text/javascript">red();</script>';
         };
         
+        $query = mysqli_query($conectar, $insercion);
 
+        header("Location: ../index.html");
     }else{
         echo "incorrecto";
     }
