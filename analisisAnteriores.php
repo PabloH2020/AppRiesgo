@@ -59,8 +59,9 @@
                 if ( card.innerHTML != inp.value ){
                     let box = document.querySelector(`.${card.innerHTML}`);
                     box.style.display = "none";
+                    card.style.display ="none";
                 }
-            } )
+            });
 
             
         })
