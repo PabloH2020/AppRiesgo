@@ -14,12 +14,12 @@ if($inc){
             $color = $row['Color'];
 
             ?>
-            <div id="tarjetas">
+            <div id="tarjetas" class="<?php  echo $nombre;   ?>">
                 <h2><?php  echo $nombre;   ?></h2>
-                <div class="<?php  echo $nombre;   ?>">
+                <div>
                     <p>
                         <b>ID: </b> <?php echo $id;   ?> <br>
-                        <b>Resultado del Análisis: </b> <?php echo $resultadoAnalisis;   ?> <br>
+                        <b>Resultado del Análisis: </b><br><br> <?php echo $resultadoAnalisis;   ?> <br><br>
                         <b>Color del semáforo: </b> <?php echo $color;   ?> <br>
                         
                     </p>

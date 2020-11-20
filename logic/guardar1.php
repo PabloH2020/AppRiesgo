@@ -69,22 +69,24 @@ if( isset($_POST['final']) ){
         
         
         echo "El ingreso ha sido correcto";
-        if ( ( $activos + $res ) > ( $deudacp )  &&    ( $partpr + $partsec ) > 30   &&   ( $deudacp / $vposteriores ) < 0.5    &&   ( $deudacp / $vultimo ) < 0.5   ){
+        if ( ( $activos + $res ) > ( $deudacp )  &&    ( $partpr + $partsec ) >= 30   &&   ( $deudacp / $vposteriores ) <= 0.5    &&   ( $deudacp / $vultimo ) <= 0.5   ){
             $texto = "*Los activos y el resultado del último ejercicio superan a la deuda con el préstamo considerado.<br><br><br>* Tiene un gran porcentaje de participación en los sectores en los que participa, mayor al 30% en la suma.<br><br><br>* La tasa que se compone de Deuda Total / Ventas Proyectadas Posteriores  , es menor al 50%.<br><br><br>* La tasa que se compone de Deuda Total / Ventas en el Último ejercicio  , es menor al 50%.<br><br><br><b>RESULTADO : ASEGURABLE !!!</b>";
             $body = $texto;
             $color = 'Verde';
             $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
 
             header("Location: ../verde.html");
+            $query = mysqli_query($conectar, $insercion);
             
             
-        }else if ( ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vposteriores ) < 0.5  ) || ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vultimo ) < 0.5  )){
+        }else if ( ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vposteriores ) <= 0.5  ) || ( ( $activos + $res ) > ( $deudacp )  && ( $deudacp / $vultimo ) <= 0.5  )){
            $texto = "* Los activos y el resultado del último ejercicio superan a la deuda con el prestamo considerado.<br><br><br>* * Una de las tasas que analiza Deuda Total / Ventas Proyectadas es menor al 50%.<br><br><br><b>RESULTADO : ASEGURABLE INICIALMENTE !!!  DEBE ESTIMARSE CON PRECISIÓN EL NIVEL DE VENTAS Y LOS COSTOS OPERATIVOS </b>.";
            $body = $texto;
            $color = 'Amarillo';
            $insercion = "INSERT INTO resultadosanalisis(nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
 
            header("Location: ../amarillo.html");
+           $query = mysqli_query($conectar, $insercion);
 
            
         }else if( ( $activos + $res ) <= ( $deudacp ) ){
@@ -94,10 +96,19 @@ if( isset($_POST['final']) ){
            $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
 
            header("Location: ../rojo.html");
+           $query = mysqli_query($conectar, $insercion);
 
+        }else{
+            $texto = "* Los activos y el resultado del último ejercicio fallan en superar a la sumatoria de las deudas.<br><br><br>* Debe analizarse el proyecto de inversión cuidadosamente, y realizar un análisis de mercado para preveer aumentos en ventas que puedan cubrir el costo financiero.<br><br><br><b>RESULTADO : NO ASEGURABLE !!!  DEBEN CONTROLARSE ASIMISMO LOS COSTOS OPERATIVOS Y EL MARGEN DE GANANCIA </b>."; 
+           $body = $texto;
+           $color = 'Rojo';
+           $insercion = "INSERT INTO resultadosanalisis( nombre, resultadoAnalisis,Color) VALUES ('$name','$texto','$color')";
+
+           header("Location: ../rojo.html");
+           $query = mysqli_query($conectar, $insercion);
         };
         
-        $query = mysqli_query($conectar, $insercion);
+        //$query = mysqli_query($conectar, $insercion);
 
         //header("Location: ../index.html");
     }else{

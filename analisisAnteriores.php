@@ -35,7 +35,7 @@
     </header>
     <div class="enter">
         <input id="ingreso" type="text" placeholder="Ingrese nombre del cliente">
-        <button id="buscar" >Buscar</button>
+        <button id="buscar" >Filtrar</button>
     </div>
     
 
@@ -55,8 +55,11 @@
             cardName.forEach( (card)=>{
                 if ( card.innerHTML != inp.value ){
                     let box = document.querySelector(`.${card.innerHTML}`);
+
+                    
                     box.style.display = "none";
                     card.style.display ="none";
+                    box.style.backgroundColor = "none";
                 }
             });
 
