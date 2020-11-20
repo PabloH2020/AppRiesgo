@@ -4,3 +4,30 @@ h2{
     padding:12px;
     color:#444;
 }
+
+#tarjetas{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:10px;
+    margin:5vh;
+}
+#tarjetas p{
+    padding:5px;
+}
+
+input{
+    width:15vw;
+    height:5vh;
+}
+
+button{
+    background-color:greenyellow;
+    width:8vw;
+    height:5vh;
+}
+
+.enter{
+    margin-left:10vw;
+    margin-top:10vh;
+}

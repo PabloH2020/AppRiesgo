@@ -23,7 +23,7 @@
                     </li>
                     <li>
                         <img src="img/archives.svg" alt="listado de analisis">
-                        <a href="appRiesgoCrediticio/analisisAnteriores.html" id="otros"><p>Ver Análisis Anteriores</p></a>
+                        <a href="appRiesgoCrediticio/analisisAnteriores.php" id="otros"><p>Ver Análisis Anteriores</p></a>
                     </li>
                     <li>
                         <img src="img/ayuda.svg" alt="ayuda">
@@ -33,6 +33,10 @@
             </div>
         </div>
     </header>
+    <div class="enter">
+        <input id="ingreso" type="text" placeholder="Ingrese nombre del cliente">
+        <button id="buscar" >Buscar</button>
+    </div>
     
 
 
@@ -42,10 +46,29 @@
         window.addEventListener('load',()=>{
             history.replaceState("","anteriores","/AnalisisAnteriores");
         })
+
+
+        let but = document.querySelector('#buscar');
+
+        but.addEventListener('click',()=>{
+
+            let cardName = Array.from(document.querySelectorAll('h2'));
+            let inp = document.querySelector('#ingreso');
+            
+            cardName.forEach( (card)=>{
+                if ( card.innerHTML != inp.value ){
+                    let box = document.querySelector(`.${card.innerHTML}`);
+                    box.style.display = "none";
+                }
+            } )
+
+            
+        })
+
     </script>
 
-    <?php
-    include("extraer.php");
-    ?>
+    <?php include("logic/extraer.php"); ?>
+    
 </body>
 </html>
+

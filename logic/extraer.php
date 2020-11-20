@@ -14,9 +14,9 @@ if($inc){
             $color = $row['Color'];
 
             ?>
-            <div>
+            <div id="tarjetas">
                 <h2><?php  echo $nombre;   ?></h2>
-                <div>
+                <div class=`$nombre`>
                     <p>
                         <b>ID: </b> <?php echo $id;   ?> <br>
                         <b>Resultado del Análisis: </b> <?php echo $resultadoAnalisis;   ?> <br>
