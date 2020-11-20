@@ -1,6 +1,3 @@
-<script type="text/javascript" src="../js/verde.js"></script>
-<script type="text/javascript" src="../js/amarillo.js"></script>
-<script type="text/javascript" src="../js/rojo.js"></script>
 
 <?php
 
